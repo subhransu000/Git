@@ -8,4 +8,6 @@ What argo image updator does , it will contineously monitor the manifest repo wh
 Here our 2nd controller will keep monitoring the git repo and pick the latest image and deploy it to the kubernetes cluter.
 This is our CD process.
 Basically we use gitops approach to deliver the application.
-Thanks
+Thank
+I am learning the git hub now will see how it goes.
+
