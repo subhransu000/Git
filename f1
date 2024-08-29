@@ -1,0 +1,11 @@
+I am subhransu sekhar dhall samanta
+Jenkins Workflow
+
+We have set up a git repo where we have our application source code.Lets say I am talking about the one of the java application,as soon as the developer commits the changes to the git repo,we have configured the webhook in the git which will triggered the pipeline to the jenkins.We are using the declarative pipeline which is easy to write and collaborate so as part of this jenkins pipeline we ran some stages like building of the application by usuing the maven language which will also run some static code analysis and unit testing,Once the build oart is done we do test few other tests as well with sast and dast tools based like code quality chaeck,code smell etc.Lets say if anything goes wrong or failed to this pipeline or the stages then what it will do it would send one notification to the dev team regarding the failure if everything goes ok then it would go forward for the docker image creation and and puch the image to the docker registry.This is basically CI.
+
+Coming to our CD part,We have a kubernetes cluster where we have deployed two kubernetes controlers tools that is argo image updator and argo cd.
+What argo image updator does , it will contineously monitor the manifest repo which is purely keeping the application manifests kile pod.yaml,service.yaml,deployment.yaml,helm charts etc.So the argo image updator will check if any new images has been pushed to the docker registry and it will pick it up the new registry and place it in the new manofest git repo.
+Here our 2nd controller will keep monitoring the git repo and pick the latest image and deploy it to the kubernetes cluter.
+This is our CD process.
+Basically we use gitops approach to deliver the application.
+Thanks
